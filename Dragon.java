@@ -20,5 +20,9 @@ public class Dragon extends Character{
 	public void heal() {
 		//to be implemented
 	}
+	
+	public String toString() {
+		return "Dragon Level: " + super.getLevel() + " Attack Damages: " + super.getlAtt() + " " + super.gethAtt();
+	}
 
 }
