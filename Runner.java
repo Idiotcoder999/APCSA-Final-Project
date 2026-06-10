@@ -7,6 +7,10 @@ public class Runner {
 		ArrayList<Character> enemies = new ArrayList<Character>();
 		enemies = setUp();
 		System.out.println(enemies);
+		for(Character c : enemies)
+			if(c instanceof Dragon)
+				c.lightAttack(enemies.get(0));
+		System.out.println(enemies);
 	}
 	
 	public static ArrayList<Character> setUp() {
@@ -20,6 +24,10 @@ public class Runner {
 		System.out.println(p1);
 		System.out.println();
 		return Game.populate(n);
+	}
+	
+	public static void run(Character p, ArrayList<Character> e) {
+		
 	}
 
 }
