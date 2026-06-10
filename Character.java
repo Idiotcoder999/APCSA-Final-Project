@@ -22,8 +22,16 @@ public abstract class Character {
 		level++;
 	}
 	
+	public boolean isDead() {
+		return health <= 0;
+	}
+	
 	public void takeDamage(int damage) {
 		health-=damage;
+	}
+	
+	public void incHealth(int inc) {
+		health+=inc;
 	}
 	
 	public int getLevel() {
