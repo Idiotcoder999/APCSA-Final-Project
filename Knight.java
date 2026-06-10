@@ -20,5 +20,9 @@ public class Knight extends Character{
 	public void heal() {
 		//to be implemented
 	}
+	
+	public String toString() {
+		return "Knight Level: " + super.getLevel() + " Attack Damages: " + super.getlAtt() + " " + super.gethAtt();
+	}
 
 }
