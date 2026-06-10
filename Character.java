@@ -1,12 +1,10 @@
-import java.util.ArrayList;
-
 public abstract class Character {
 	private int level;
 	private int health;
 	private int exp;
 	private int lAtt;
 	private int hAtt;
-	private ArrayList Enemies;
+	protected int startingHealth;
 	
 	
 	public Character(int l, int h, int light, int heavy) {
@@ -15,29 +13,17 @@ public abstract class Character {
 		exp = 0;
 		lAtt = light;
 		hAtt = heavy;
-	}
-	
-	public ArrayList populate(int num) {
-		for(int i = 0; i < num; i++) {
-			int type = (int) (Math.random() * 3) + 1;
-			int lvl = (int) (Math.random() * 3) + 1;
-			int lightAttack = (int) (Math.random() * (lvl * 3)) + lvl;
-			int heavyAttack = (int) (Math.random() * (lvl * 5)) + lvl;
-			int h = 
-			if(type == 1) {
-				Enemies.add(new Player(lvl, ))
-			}
-		}
+		startingHealth = h;
 	}
 
 	public abstract void heal();
 	
 	public void levelUp() {
-		//to be implemented
+		level++;
 	}
 	
 	public void takeDamage(int damage) {
-		//to be implemented
+		health-=damage;
 	}
 	
 	public int getLevel() {
@@ -52,8 +38,8 @@ public abstract class Character {
 		return health;
 	}
 	
-	public void setHealth(int addition) {
-		health += addition;
+	public void setHealth(int newHealth) {
+		health = newHealth;
 	}
 	
 	public abstract void lightAttack(Character c);		//to be implemented
@@ -66,5 +52,13 @@ public abstract class Character {
 
 	public void increaseEXP(int xp) {
 		this.exp += xp;
+	}
+
+	public int getlAtt() {
+		return lAtt;
+	}
+
+	public int gethAtt() {
+		return hAtt;
 	}
 }
