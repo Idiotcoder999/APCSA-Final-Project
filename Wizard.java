@@ -8,21 +8,27 @@ public class Wizard extends Character{
 
 	@Override
 	public void lightAttack(Character c) {
-		//to be implemented
+		c.takeDamage(super.getlAtt());
+		System.out.println("Dragon dealt " + super.getlAtt() + " damage from a light attack");
 	}
 
 	@Override
 	public void heavyAttack(Character c) {
-		//to be implemented
+		c.takeDamage(super.gethAtt());
 	}
 
 	@Override
 	public void heal() {
-		//to be implemented
+		if(super.getHealth() <= (super.getHealth()/2)) {
+			int rand = (int) (Math.random() * 4) + 1;
+			if(rand == 1) {
+				super.incHealth(super.getHealth()/3);
+			}
+		}
 	}
 	
 	public String toString() {
-		return "Wizard Level: " + super.getLevel() + " Attack Damages: " + super.getlAtt() + " " + super.gethAtt();
+		return "Wizard Level: " + super.getLevel() + " Attack Damages: " + super.getlAtt() + " " + super.gethAtt() + " Health: " + super.getHealth();
 	}
 
 }
