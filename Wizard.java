@@ -20,5 +20,9 @@ public class Wizard extends Character{
 	public void heal() {
 		//to be implemented
 	}
+	
+	public String toString() {
+		return "Wizard Level: " + super.getLevel() + " Attack Damages: " + super.getlAtt() + " " + super.gethAtt();
+	}
 
 }
