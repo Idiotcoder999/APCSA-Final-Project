@@ -19,7 +19,18 @@ public abstract class Character {
 	public abstract void heal();
 	
 	public void levelUp() {
-		level++;
+		if(level == 1 && exp >= 100) {
+			exp-=100;
+			level++;
+			lAtt = 20;
+			hAtt = 30;
+		}
+		if(level == 2 && exp >= 200) {
+			exp-=200;
+			level++;
+			lAtt = 26;
+			hAtt = 38;
+		}
 	}
 	
 	public boolean isDead() {
@@ -59,7 +70,8 @@ public abstract class Character {
 	}
 
 	public void increaseEXP(int xp) {
-		this.exp += xp;
+		exp += xp;
+		System.out.println("Your exp is now: " + exp);
 	}
 
 	public int getlAtt() {
