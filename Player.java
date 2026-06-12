@@ -18,14 +18,14 @@ public class Player extends Character{
 		}
 	}
 
-	@Override
 	public void lightAttack(Character c) {
-		//to be implemented
+		c.takeDamage(super.getlAtt());
+		System.out.println("Player dealt " + super.getlAtt() + " damage from a light attack");
 	}
 
 	@Override
 	public void heavyAttack(Character c) {
-		//to be implemented
+		c.takeDamage(super.gethAtt());
 	}
 	
 	public String toString() {
