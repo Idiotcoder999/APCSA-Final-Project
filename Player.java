@@ -14,6 +14,22 @@ public class Player extends Character{
 		if(super.getHealth() >= startingHealth/2) {
 			if(money >= 50) {
 				super.setHealth(startingHealth); 
+				money-=50;
+				System.out.println("You have " + money + " money remaining. Your health is now " + super.getHealth());
+			} else if(money >= 25) {
+				super.setHealth(startingHealth); 
+				money-=25;
+				System.out.println("You have " + money + " money remaining. Your health is now " + super.getHealth());
+			}
+		} else {
+			if(money >= 50) {
+				super.incHealth(startingHealth/2); 
+				money-=50;
+				System.out.println("You have " + money + " money remaining. Your health is now " + super.getHealth());
+			} else if(money >= 25) {
+				super.incHealth(startingHealth/3); 
+				money-=25;
+				System.out.println("You have " + money + " money remaining. Your health is now " + super.getHealth());
 			}
 		}
 	}
@@ -26,6 +42,11 @@ public class Player extends Character{
 	@Override
 	public void heavyAttack(Character c) {
 		c.takeDamage(super.gethAtt());
+	}
+	
+	public void incMoney(int m) {
+		money+=m;
+		System.out.println("Your money is now " + money);
 	}
 	
 	public String toString() {
