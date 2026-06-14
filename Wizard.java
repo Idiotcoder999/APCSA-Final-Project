@@ -9,12 +9,13 @@ public class Wizard extends Character{
 	@Override
 	public void lightAttack(Character c) {
 		c.takeDamage(super.getlAtt());
-		System.out.println("Dragon dealt " + super.getlAtt() + " damage from a light attack");
+		System.out.println("\nYou took " + super.getlAtt() + " damage from a light attack");
 	}
 
 	@Override
 	public void heavyAttack(Character c) {
 		c.takeDamage(super.gethAtt());
+		System.out.println("\nYou took " + super.gethAtt() + " damage from a heavy attack");
 	}
 
 	@Override
