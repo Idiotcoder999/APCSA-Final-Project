@@ -70,7 +70,7 @@ public class Game {
 		}
 
 		if(!lvl3 || lvl3Count < 6) {
-			for(int i = 0; i < 10; ) {
+			for(int i = 0; i < 10; i++) {
 				int type = (int) (Math.random() * 3) + 1;
 				int lightAttack = (int) (Math.random() * (3 * 3)) + 20;
 				int heavyAttack = (int) (Math.random() * (3 * 5)) + 45;
