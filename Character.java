@@ -24,12 +24,14 @@ public abstract class Character {
 			level++;
 			lAtt = 20;
 			hAtt = 30;
+			System.out.println("\nYou levled up to level " + level);
 		}
 		if(level == 2 && exp >= 200) {
 			exp-=200;
 			level++;
 			lAtt = 26;
 			hAtt = 38;
+			System.out.println("\nYou leveled up to level " + level);
 		}
 	}
 	
@@ -81,4 +83,5 @@ public abstract class Character {
 	public int gethAtt() {
 		return hAtt;
 	}
+
 }
