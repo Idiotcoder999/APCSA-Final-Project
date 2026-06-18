@@ -1,6 +1,7 @@
 public class Player extends Character{
 	private int money;
 	private String name;
+	private int heavy = 2;
 
 	public Player(int l, int h, int light, int heavy, int mon, String n) {
 		super(l, h, light, heavy);
@@ -42,11 +43,24 @@ public class Player extends Character{
 	@Override
 	public void heavyAttack(Character c) {
 		c.takeDamage(super.gethAtt());
+		System.out.println("Player dealt " + super.gethAtt() + " damage from a heavy attack");
 	}
 	
 	public void incMoney(int m) {
 		money+=m;
 		System.out.println("Your money is now " + money);
+	}
+	
+	public void reset() {
+		heavy = 2;
+	}
+	
+	public int heavysLeft() {
+		return heavy;
+	}
+	
+	public void decHeavys() {
+		heavy--;
 	}
 	
 	public String toString() {
